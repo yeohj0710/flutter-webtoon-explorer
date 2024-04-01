@@ -1,11 +1,15 @@
 # flutter-webtoon-explorer
 
-- A webtoon exploration app developed using Flutter
+- A webtoon exploration app developed using Flutter (App 1 and App 2 are apps for practicing Flutter, and App 3 is the Webtoon Explorer App)
 - StatelessWidget: Static UI / StatefulWidget: Dynamic UI (UI that changes its state)
 
 <br>
 
 ### App 1. Wallet App using StatelessWidget
+
+<br>
+
+![flutter-1](https://github.com/yeohj0710/flutter-webtoon-explorer/assets/93759367/ccff9a0b-b99a-4ede-8102-5781600571ca)
 
 <br>
 
