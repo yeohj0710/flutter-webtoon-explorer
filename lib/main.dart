@@ -12,40 +12,73 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  List<int> numbers = [];
+  bool showTitle = true;
 
-  void onClicked() {
+  void toggleTitle() {
     setState(() {
-      numbers.add(numbers.length);
+      showTitle = !showTitle;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(
+            color: Colors.red,
+          ),
+        ),
+      ),
       home: Scaffold(
         backgroundColor: const Color(0xFFF4EDDB),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                "Click Count",
-                style: TextStyle(fontSize: 30),
-              ),
-              for (var number in numbers)
-                Text(
-                  "$number",
-                  style: const TextStyle(fontSize: 30),
-                ),
+              showTitle ? const MyTitle() : const Text("nothing"),
               IconButton(
-                iconSize: 40,
-                onPressed: onClicked,
-                icon: const Icon(Icons.add_box_rounded),
-              )
+                onPressed: toggleTitle,
+                icon: const Icon(Icons.remove_red_eye),
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class MyTitle extends StatefulWidget {
+  const MyTitle({
+    super.key,
+  });
+
+  @override
+  State<MyTitle> createState() => _MyTitleState();
+}
+
+class _MyTitleState extends State<MyTitle> {
+  @override
+  void initState() {
+    super.initState();
+    print("init state");
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    print("dispose");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    print("build");
+    return Text(
+      "Title",
+      style: TextStyle(
+        fontSize: 30,
+        color: Theme.of(context).textTheme.titleLarge?.color,
       ),
     );
   }
