@@ -1,85 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_webtoon_explorer/screens/home_screen.dart';
 
 void main() {
   runApp(const App());
 }
 
-class App extends StatefulWidget {
+class App extends StatelessWidget {
   const App({super.key});
-
-  @override
-  State<App> createState() => _AppState();
-}
-
-class _AppState extends State<App> {
-  bool showTitle = true;
-
-  void toggleTitle() {
-    setState(() {
-      showTitle = !showTitle;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          backgroundColor: const Color(0xFFE7626C),
+        ),
         textTheme: const TextTheme(
-          titleLarge: TextStyle(
-            color: Colors.red,
+          displayLarge: TextStyle(
+            color: Color(0xFF232B55),
           ),
         ),
+        cardColor: const Color(0xFFF4EDDB),
       ),
-      home: Scaffold(
-        backgroundColor: const Color(0xFFF4EDDB),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              showTitle ? const MyTitle() : const Text("nothing"),
-              IconButton(
-                onPressed: toggleTitle,
-                icon: const Icon(Icons.remove_red_eye),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class MyTitle extends StatefulWidget {
-  const MyTitle({
-    super.key,
-  });
-
-  @override
-  State<MyTitle> createState() => _MyTitleState();
-}
-
-class _MyTitleState extends State<MyTitle> {
-  @override
-  void initState() {
-    super.initState();
-    print("init state");
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    print("dispose");
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    print("build");
-    return Text(
-      "Title",
-      style: TextStyle(
-        fontSize: 30,
-        color: Theme.of(context).textTheme.titleLarge?.color,
-      ),
+      home: const HomeScreen(),
     );
   }
 }
