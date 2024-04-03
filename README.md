@@ -61,10 +61,14 @@
 <br>
 
 - 변경된 데이터를 UI에 업데이트하기 위해서는 setState() 함수를 사용해야 한다.
-- setState() 함수를 호출하면 build() 메서드를 다시 실행된다.
-  - ex) void onClicked() { setState(() { counter++; }); }
+- setState() 함수를 호출하면 build() 메서드가 다시 실행된다.
+```dart
+void onClicked() { setState(() { counter++; }); }
+```
 - 또는 다음과 같이 작성해도 UI가 업데이트 된다.
-  - ex) void onClicked() { counter++; setState(() {}); }
+```dart
+void onClicked() { counter++; setState(() {}); }
+```
 
 <br>
 
