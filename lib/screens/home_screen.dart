@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
             return Column(
               children: [
                 const SizedBox(
-                  height: 50,
+                  height: 180,
                 ),
                 Expanded(
                   child: makeList(snapshot),
@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
       itemCount: snapshot.data!.length,
       padding: const EdgeInsets.symmetric(
         vertical: 10,
-        horizontal: 20,
+        horizontal: 100,
       ),
       itemBuilder: (context, index) {
         var webtoon = snapshot.data![index];
