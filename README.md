@@ -135,7 +135,7 @@
 <br>
 
 - app 완성 이후, 빌드하기 전 인터넷 권한 문제 해결을 해야 한다.
-- Poject 뷰 > android > app > src > main > AndroidManifest.xml에서,
+- Project 뷰 > android > app > src > main > AndroidManifest.xml에서,
 - <application> 태그 바로 윗 줄에 다음의 코드를 입력하여 권한을 추가한다.
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
